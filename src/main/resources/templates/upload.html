@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>upload Excel</title>
+</head>
+<body>
+    <form th:action="@{/results}" method="post" enctype="multipart/form-data">
+        <!-- 아이디 입력 -->
+        <div>
+            <label for="adminId">비밀번호:</label>
+            <input type="text" id="adminId" name="adminId" required>
+        </div>
+        <!-- 비밀번호 입력 -->
+        <div>
+            <label for="password">비밀번호:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <!-- 엑셀 파일 입력 -->
+        <div>
+            <label for="file">엑셀 파일:</label>
+            <input type="file" id="file" name="file" accept=".xlsx,.xls" required>
+        </div>
+        <!-- 제출 버튼 -->
+        <div>
+            <button type="submit">업로드</button>
+        </div>
+    </form>
+</body>
+</html>
