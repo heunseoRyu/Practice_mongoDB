@@ -6,6 +6,13 @@ https://jsonobject.tistory.com/484
 
 발생했던 문제 
 
-import가 안됨.. 분영 import문은 잘 썼는데 막 다 빨간글씨로 되어 있음.
+1. import가 안됨.. 분영 import문은 잘 썼는데 막 다 빨간글씨로 되어 있음.
 
 -> dependencies 다 지우고 중복된 구문 없는지 정리한 다음에 다시 실행
+
+2. Exception authenticating MongoCredential{mechanism=SCRAM-SHA-256, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}] with root cause
+
+-> (1) https://greedydeveloper.tistory.com/337
+
+-> (2) https://note-jm.tistory.com/12
+
