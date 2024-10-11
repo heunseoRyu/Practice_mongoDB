@@ -19,4 +19,4 @@ https://jsonobject.tistory.com/484
 
 -> (2) https://note-jm.tistory.com/12
 
--> (3) uri는 계정이 저장된 admin db의 경로로 설정하고 database는 실제 데이터를 저장할 db로 설정
+-> (3) uri는 계정이 저장된 admin db의 경로로 설정하고 database는 실제 데이터를 저장할 db로 설정 (성공!)
