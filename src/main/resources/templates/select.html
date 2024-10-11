@@ -8,6 +8,19 @@
     <title>select subject</title>
 </head>
 <body>
-과목 선택
+<table>
+    <tr>
+        <th>시험이름</th> <th>업로드일</th> <th>선택</th>
+    </tr>
+    <tr th:each="result : ${results}">
+        <td><p th:text="${result.fileName}"></p></td>
+        <td><p th:text="${#temporals.format(result.createTime, 'yy/MM/dd ahh:mm')}"></p></td>
+        <td>
+            <p th:text="${result.id}"> </p>
+            <a th:href="@{'/results/'+${result.id}}">선택</a>
+        </td>
+    </tr>
+    <script src="/result.js"></script>
+</table>
 </body>
 </html>

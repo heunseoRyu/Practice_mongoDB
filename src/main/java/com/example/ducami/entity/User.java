@@ -28,6 +28,7 @@ public class User {
     private Integer cls;
     private Integer num;
 
+    private String name;
     private String username;
     private String password;
 
