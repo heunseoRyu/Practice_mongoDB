@@ -10,6 +10,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -72,4 +74,27 @@ public class ResultService {
     }
 
 
+    public boolean checkIsValidTest(String filename) {
+        return resultRepository.existsByFileName(filename);
+    }
+
+    public List<Result> resultList() {
+        return resultRepository.findAll();
+    }
+
+    public StudentScore getResult(String grade, String cls, String num, String filename) {
+        // 쿼리 생성
+        Query query = new Query();
+        query.addCriteria(Criteria.where("grade").is(Integer.valueOf(grade)));
+        query.addCriteria(Criteria.where("cls").is(Integer.valueOf(cls)));
+        query.addCriteria(Criteria.where("num").is(Integer.valueOf(num)));
+
+        // 동적으로 filename에 해당하는 컬렉션을 조회하고 쿼리 실행
+        StudentScore result = mongoTemplate.findOne(query, StudentScore.class, filename);
+        return result;
+    }
+
+    public Result getFile(Long fileId) {
+        return resultRepository.findById(fileId).orElse(null);
+    }
 }

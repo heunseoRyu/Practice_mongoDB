@@ -6,4 +6,5 @@ import com.example.ducami.entity.UserType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ResultRepository extends JpaRepository<Result,Long> {
+    boolean existsByFileName(String fileName);
 }

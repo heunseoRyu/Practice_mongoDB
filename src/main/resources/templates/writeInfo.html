@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+<form th:action="@{'/results/' + ${fileId}+'/score'}" method="get" enctype="multipart/form-data">
+    <!-- 아이디 입력 -->
+    <div>
+        <label for="userId">학생 아이디:</label>
+        <input type="text" id="userId" name="userId" required>
+    </div>
+    <!-- 비밀번호 입력 -->
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <!-- 학번 파일 입력 -->
+    <div>
+        <label for="grade">학년:</label>
+        <input type="text" id="grade" name="grade" required>
+    </div>
+    <div>
+        <label for="cls">반</label>
+        <input type="text" id="cls" name="cls" required>
+    </div>
+    <div>
+        <label for="num">번호:</label>
+        <input type="text" id="num" name="num" required>
+    </div>
+    <div>
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <!-- 제출 버튼 -->
+    <div>
+        <button type="submit">업로드</button>
+    </div>
+</form>
+</div>
+</body>
+</html>
